@@ -1,0 +1,15 @@
+defaults: &defaults
+  adapter: postgresql
+  template: template0
+  host: localhost
+
+development:
+  <<: *defaults
+  database: epk_sync_development
+
+test: &test
+  <<: *defaults
+  min_messages: warning #magic sauce
+  database: epk_sync_test
+cucumber:
+<<: *test
